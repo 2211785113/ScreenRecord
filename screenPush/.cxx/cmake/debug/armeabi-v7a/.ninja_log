@@ -1,0 +1,19 @@
+# ninja log v5
+4	810	0	src/main/cpp/librtmp/CMakeFiles/rtmp.dir/parseurl.c.o	bfa5e1d5e46bbbbc
+1	811	0	src/main/cpp/librtmp/CMakeFiles/rtmp.dir/hashswf.c.o	48d0667eb6ed4eb
+3	816	0	src/main/cpp/librtmp/CMakeFiles/rtmp.dir/log.c.o	d608239a62914450
+0	889	0	src/main/cpp/librtmp/CMakeFiles/rtmp.dir/amf.c.o	a8085d534f887fdc
+5	1323	0	src/main/cpp/librtmp/CMakeFiles/rtmp.dir/rtmp.c.o	b21d33c5555da610
+1323	1453	0	src/main/cpp/librtmp/librtmp.a	5ffe77a32eb0cd88
+1453	2557	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	1fe64ad1801e27d7
+2557	2719	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	82d9fa68e8429239
+2	472	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	1fe64ad1801e27d7
+472	515	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	82d9fa68e8429239
+7	269	0	src/main/cpp/librtmp/CMakeFiles/rtmp.dir/parseurl.c.o	bfa5e1d5e46bbbbc
+6	294	0	src/main/cpp/librtmp/CMakeFiles/rtmp.dir/log.c.o	d608239a62914450
+4	321	0	src/main/cpp/librtmp/CMakeFiles/rtmp.dir/hashswf.c.o	48d0667eb6ed4eb
+2	476	0	src/main/cpp/librtmp/CMakeFiles/rtmp.dir/amf.c.o	a8085d534f887fdc
+9	997	0	src/main/cpp/librtmp/CMakeFiles/rtmp.dir/rtmp.c.o	b21d33c5555da610
+997	1111	0	src/main/cpp/librtmp/librtmp.a	5ffe77a32eb0cd88
+1111	1815	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	1fe64ad1801e27d7
+1815	1870	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	82d9fa68e8429239

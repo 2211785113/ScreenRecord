@@ -1,0 +1,69 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord",
+      "sdkFolder": "/Users/liangyaru/Library/Android/sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/build/intermediates",
+      "gradleModulePathName": ":screenPush",
+      "moduleRootFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush",
+      "makeFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/.cxx",
+      "cxxFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx",
+      "ndkFolder": "/Users/liangyaru/Library/Android/sdk/ndk/21.0.6113669",
+      "ndkVersion": "21.0.6113669",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      ""
+    ],
+    "variantName": "debug",
+    "soFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/build/intermediates/cmake/debug/lib",
+    "objFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/build/intermediates/cmake/debug/obj",
+    "jsonFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug",
+    "gradleBuildOutputFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cxx/debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARMEABI_V7A",
+  "abiPlatformVersion": 21,
+  "cxxBuildFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a",
+  "jsonFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cxx/debug/armeabi-v7a",
+  "objFolder": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/build/intermediates/cmake/debug/obj/armeabi-v7a",
+  "buildCommandFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/build_command.txt",
+  "buildOutputFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/build_output.txt",
+  "modelOutputFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cxx/debug/armeabi-v7a/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cxx/debug/armeabi-v7a/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cxx/debug/armeabi-v7a/build_generation_state.json",
+    "cacheKeyFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cxx/debug/armeabi-v7a/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cxx/debug/armeabi-v7a/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cxx/debug/armeabi-v7a/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cxx/debug/armeabi-v7a/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/compile_commands.json"
+}

@@ -1,0 +1,15 @@
+Executable : /Users/liangyaru/Library/Android/sdk/cmake/3.6.4111459/bin/cmake
+arguments : 
+-H/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush
+-B/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a
+-DANDROID_ABI=armeabi-v7a
+-DANDROID_PLATFORM=android-21
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/build/intermediates/cmake/debug/obj/armeabi-v7a
+-DCMAKE_BUILD_TYPE=Debug
+-DANDROID_NDK=/Users/liangyaru/Library/Android/sdk/ndk/21.0.6113669
+-DCMAKE_CXX_FLAGS=
+-DCMAKE_TOOLCHAIN_FILE=/Users/liangyaru/Library/Android/sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/Users/liangyaru/Library/Android/sdk/cmake/3.6.4111459/bin/ninja
+-GAndroid Gradle - Ninja
+jvmArgs : 
+

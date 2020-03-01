@@ -1,0 +1,6 @@
+/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/native-lib.dir
+/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/src/main/cpp/librtmp/CMakeFiles/edit_cache.dir
+/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/src/main/cpp/librtmp/CMakeFiles/rebuild_cache.dir
+/Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/.cxx/cmake/debug/armeabi-v7a/src/main/cpp/librtmp/CMakeFiles/rtmp.dir
