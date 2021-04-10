@@ -1,5 +1,8 @@
 package com.enjoy.screenpush
 
+/**
+ * 发送数据类
+ */
 open class RTMPPackage {
 
     open var buffer: ByteArray? = null

@@ -7,6 +7,10 @@ import android.media.projection.MediaProjection
 import android.media.projection.MediaProjectionManager
 import java.util.concurrent.LinkedBlockingQueue
 
+/**
+ * 录屏任务放在一个子线程中 或者 放在一个Service中：
+ * 录屏-编码-封包-发送
+ */
 class ScreenLive : Runnable {
 
     private lateinit var url: String
@@ -19,11 +23,14 @@ class ScreenLive : Runnable {
         System.loadLibrary("native-lib")
     }
 
+    /**
+     * 获取Intent，发起录屏请求，获取到请求结果后开始录屏
+     */
     open fun startLive(activity: Activity, url: String) {
         this.url = url
         // 投屏管理器
         this.mediaProjectionManager = activity
-                .getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
+            .getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
         // 创建截屏请求intent
         val captureIntent = mediaProjectionManager.createScreenCaptureIntent()
         activity.startActivityForResult(captureIntent, 100)
@@ -39,7 +46,7 @@ class ScreenLive : Runnable {
         if (requestCode == 100 && resultCode == Activity.RESULT_OK) {
             // 获得截屏器
             mediaProjection = mediaProjectionManager.getMediaProjection(resultCode, data)
-            LiveTaskManager.getInstance().execute(this)
+            LiveTaskManager.getInstance().execute(this)//线程池任务管理类。负责初始化线程任务，提交该录屏任务，传this。
         }
     }
 
@@ -58,7 +65,7 @@ class ScreenLive : Runnable {
         isLiving = true
 
         val videoCodec = VideoCodec(this)
-        mediaProjection?.let {mediaProjection->
+        mediaProjection?.let { mediaProjection ->
             videoCodec.startLive(mediaProjection)
         }
 
@@ -78,9 +85,11 @@ class ScreenLive : Runnable {
                 break
             }
             if (rtmpPackage.buffer != null && rtmpPackage.buffer!!.size != 0) {
-                isSend = sendData(rtmpPackage.buffer!!, rtmpPackage.buffer!!
+                isSend = sendData(
+                    rtmpPackage.buffer!!, rtmpPackage.buffer!!
                         .size, rtmpPackage
-                        .type, rtmpPackage.tms)
+                        .type, rtmpPackage.tms
+                )
             }
         }
         isLiving = false
@@ -90,6 +99,9 @@ class ScreenLive : Runnable {
         disConnect()
     }
 
+    /**
+     * 用于声明某个方法不由 kotlin 实现（与 java 的 native 类似）
+     */
     private external fun connect(url: String): Boolean
 
     private external fun disConnect()

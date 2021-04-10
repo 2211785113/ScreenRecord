@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private var mPermissions =
         arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO)
 
-    private var mScreenLive: ScreenLive? = null
+    private lateinit var mScreenLive: ScreenLive
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,26 +36,21 @@ class MainActivity : AppCompatActivity() {
     open fun startLive(view: View) {
         mScreenLive = ScreenLive()
 
-        val url = "rtmp://send3.douyu.com/live/8131799rv4lkHsac?wsSecret=401293db727a2a47cb8c47fd85f40ea5&wsTime=5e4a6502&wsSeek=off&wm=0&tw=0&roirecognition=0"
+        val url =
+            "rtmp://send3.douyu.com/live/8131799rv4lkHsac?wsSecret=401293db727a2a47cb8c47fd85f40ea5&wsTime=5e4a6502&wsSeek=off&wm=0&tw=0&roirecognition=0"
 //        val url = "rtmp://192.168.8.126/live/ryrUg3UmL"
 
-        mScreenLive?.let { mScreenLive ->
-            mScreenLive.startLive(this, url)
-        }
+        mScreenLive.startLive(this, url)
     }
 
     open fun stopLive(view: View) {
-        mScreenLive?.let { mScreenLive ->
-            mScreenLive.stoptLive()
-        }
+        mScreenLive.stoptLive()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        mScreenLive?.let { mScreenLive ->
-            data?.let { data ->
-                mScreenLive.onActivityResult(requestCode, resultCode, data)
-            }
+        data?.let { data ->
+            mScreenLive.onActivityResult(requestCode, resultCode, data)
         }
     }
 
