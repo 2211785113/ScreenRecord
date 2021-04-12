@@ -1,4 +1,4 @@
-package com.enjoy.screenpush
+package com.enjoy.screenpush.thread
 
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor
@@ -30,8 +30,10 @@ class LiveTaskManager {
      */
     init {
         var threadPoolExecutor = ThreadPoolExecutor(
-                CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_SECONDS.toLong(), TimeUnit.SECONDS,
-                sPoolWorkQueue)
+            CORE_POOL_SIZE,
+            MAXIMUM_POOL_SIZE, KEEP_ALIVE_SECONDS.toLong(), TimeUnit.SECONDS,
+            sPoolWorkQueue
+        )
         threadPoolExecutor.allowCoreThreadTimeOut(true)
         this.threadPoolExecutor = threadPoolExecutor
     }
@@ -59,7 +61,8 @@ class LiveTaskManager {
             if (instance == null) {
                 synchronized(LiveTaskManager::class.java) {
                     if (instance == null) {
-                        instance = LiveTaskManager()
+                        instance =
+                            LiveTaskManager()
                     }
                 }
             }

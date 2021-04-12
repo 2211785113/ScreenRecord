@@ -1,4 +1,4 @@
-package com.enjoy.screenpush
+package com.enjoy.screenpush.data
 
 /**
  * 发送数据类

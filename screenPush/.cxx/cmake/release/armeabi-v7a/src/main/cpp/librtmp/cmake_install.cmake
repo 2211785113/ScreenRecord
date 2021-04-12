@@ -1,8 +1,8 @@
-# Install script for directory: /Users/liangyaru/Downloads/AS_Workspace/github/luping/ScreenRecord/screenPush/src/main/cpp/librtmp
+# Install script for directory: D:/workspace/github_me/ScreenRecord/screenPush/src/main/cpp/librtmp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Project")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

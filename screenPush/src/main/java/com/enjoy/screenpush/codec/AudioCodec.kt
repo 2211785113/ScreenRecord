@@ -1,6 +1,8 @@
-package com.enjoy.screenpush
+package com.enjoy.screenpush.codec
 
 import android.media.*
+import com.enjoy.screenpush.data.RTMPPackage
+import com.enjoy.screenpush.thread.ScreenLiveRunnable
 import java.io.IOException
 
 /**
@@ -8,7 +10,7 @@ import java.io.IOException
  */
 class AudioCodec : Thread {
 
-    private lateinit var screenLive: ScreenLive
+    private lateinit var screenLive: ScreenLiveRunnable
 
     private var mediaCodec: MediaCodec? = null
     private var audioRecord: AudioRecord? = null
@@ -17,7 +19,7 @@ class AudioCodec : Thread {
     private var startTime: Long = 0
     private var minBufferSize: Int = 0
 
-    constructor(screenLive: ScreenLive) {
+    constructor(screenLive: ScreenLiveRunnable) {
         this.screenLive = screenLive
     }
 
@@ -75,7 +77,8 @@ class AudioCodec : Thread {
         var rtmpPackage = RTMPPackage()
         val audioDecoderSpecificInfo = byteArrayOf(0x12, 0x08)
         rtmpPackage.buffer = audioDecoderSpecificInfo
-        rtmpPackage.type = RTMPPackage.RTMP_PACKET_TYPE_AUDIO_HEAD
+        rtmpPackage.type =
+            RTMPPackage.RTMP_PACKET_TYPE_AUDIO_HEAD
         screenLive.addPackage(rtmpPackage)
 
         audioRecord?.let { audioRecord ->
@@ -114,7 +117,8 @@ class AudioCodec : Thread {
 
                         rtmpPackage = RTMPPackage()
                         rtmpPackage.buffer = outData
-                        rtmpPackage.type = RTMPPackage.RTMP_PACKET_TYPE_AUDIO_DATA
+                        rtmpPackage.type =
+                            RTMPPackage.RTMP_PACKET_TYPE_AUDIO_DATA
                         val tms = bufferInfo.presentationTimeUs / 1000 - startTime
                         rtmpPackage.tms = tms
                         screenLive.addPackage(rtmpPackage)

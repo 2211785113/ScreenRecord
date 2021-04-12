@@ -1,17 +1,20 @@
-package com.enjoy.screenpush
+package com.enjoy.screenpush.thread
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.media.projection.MediaProjection
 import android.media.projection.MediaProjectionManager
+import com.enjoy.screenpush.codec.AudioCodec
+import com.enjoy.screenpush.data.RTMPPackage
+import com.enjoy.screenpush.codec.VideoCodec
 import java.util.concurrent.LinkedBlockingQueue
 
 /**
  * 录屏任务放在一个子线程中 或者 放在一个Service中：
  * 录屏-编码-封包-发送
  */
-class ScreenLive : Runnable {
+class ScreenLiveRunnable : Runnable {
 
     private lateinit var url: String
     private lateinit var mediaProjectionManager: MediaProjectionManager

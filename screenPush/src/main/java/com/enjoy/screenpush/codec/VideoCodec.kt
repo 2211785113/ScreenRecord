@@ -1,4 +1,4 @@
-package com.enjoy.screenpush
+package com.enjoy.screenpush.codec
 
 import android.hardware.display.DisplayManager
 import android.hardware.display.VirtualDisplay
@@ -7,6 +7,8 @@ import android.media.MediaCodecInfo
 import android.media.MediaFormat
 import android.media.projection.MediaProjection
 import android.os.Bundle
+import com.enjoy.screenpush.data.RTMPPackage
+import com.enjoy.screenpush.thread.ScreenLiveRunnable
 import java.io.IOException
 
 /**
@@ -14,7 +16,7 @@ import java.io.IOException
  */
 class VideoCodec : Thread {
 
-    private lateinit var screenLive: ScreenLive
+    private lateinit var screenLive: ScreenLiveRunnable
 
     private var mediaCodec: MediaCodec? = null
     private var virtualDisplay: VirtualDisplay? = null
@@ -23,7 +25,7 @@ class VideoCodec : Thread {
     private var startTime: Long = 0
     private var mediaProjection: MediaProjection? = null
 
-    constructor(screenLive: ScreenLive) {
+    constructor(screenLive: ScreenLiveRunnable) {
         this.screenLive = screenLive
     }
 
@@ -108,7 +110,8 @@ class VideoCodec : Thread {
                     }
                     val rtmpPackage = RTMPPackage()
                     rtmpPackage.buffer = outData
-                    rtmpPackage.type = RTMPPackage.RTMP_PACKET_TYPE_VIDEO
+                    rtmpPackage.type =
+                        RTMPPackage.RTMP_PACKET_TYPE_VIDEO
                     val tms = bufferInfo.presentationTimeUs / 1000 - startTime
                     rtmpPackage.tms = tms
                     screenLive.addPackage(rtmpPackage)

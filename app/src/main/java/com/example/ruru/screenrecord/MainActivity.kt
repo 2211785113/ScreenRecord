@@ -9,7 +9,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.enjoy.screenpush.ScreenLive
+import com.enjoy.screenpush.thread.ScreenLiveRunnable
 
 /**
  * 注意：
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private var mPermissions =
         arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO)
 
-    private lateinit var mScreenLive: ScreenLive
+    private lateinit var mScreenLive: ScreenLiveRunnable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     open fun startLive(view: View) {
-        mScreenLive = ScreenLive()
+        mScreenLive = ScreenLiveRunnable()
 
         val url =
             "rtmp://send3.douyu.com/live/8131799rv4lkHsac?wsSecret=401293db727a2a47cb8c47fd85f40ea5&wsTime=5e4a6502&wsSeek=off&wm=0&tw=0&roirecognition=0"
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initPermission() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             var permissionList = arrayListOf<String>()
             for (item in mPermissions) {
                 if (ContextCompat.checkSelfPermission(
@@ -78,13 +78,11 @@ class MainActivity : AppCompatActivity() {
         requestCode: Int,
         permissions: Array<String>, grantResults: IntArray
     ) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (grantResults.isNotEmpty()) {
-                for (item in grantResults) {
-                    if (item != PackageManager.PERMISSION_GRANTED) {
-                        initPermission()
-                        break
-                    }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && grantResults.isNotEmpty()) {
+            for (item in grantResults) {
+                if (item != PackageManager.PERMISSION_GRANTED) {
+                    initPermission()
+                    break
                 }
             }
         }
