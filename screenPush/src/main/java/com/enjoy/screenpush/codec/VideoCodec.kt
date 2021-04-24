@@ -16,7 +16,7 @@ import java.io.IOException
  */
 class VideoCodec : Thread {
 
-    private lateinit var screenLive: ScreenLiveRunnable
+    private var screenLive: ScreenLiveRunnable
 
     private var mediaCodec: MediaCodec? = null
     private var virtualDisplay: VirtualDisplay? = null

@@ -1,30 +1,47 @@
 package com.enjoy.screenpush.service
 
-import android.app.Notification
-import android.app.PendingIntent
-import android.app.Service
+import android.app.*
+import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.hardware.display.VirtualDisplay
+import android.media.projection.MediaProjection
+import android.os.Build
 import android.os.IBinder
+import androidx.core.content.ContextCompat.startForegroundService
 import com.enjoy.screenpush.IMyAidlInterface
 import com.enjoy.screenpush.R
+import java.util.*
 
 /**
- * Created by lyr on 2021/4/10 & content is 录屏放在一个Service中 提供录屏服务-前台服务
+ * Created by lyr on 2021/4/10 & content is 录屏服务
  */
 class ScreenLiveService : Service() {
 
-    /**
-     * 前台服务
-     */
-    override fun onCreate() {
-        super.onCreate()
+    private var mResultCode = -1
+    private var mResultData: Intent? = null
+    private var mMediaProjection: MediaProjection? = null
+    private var isStarted = false
 
-        val notification =
-            Notification(R.mipmap.ic_launcher, "Notification comes", System.currentTimeMillis())
-        val notificationIntent = Intent(this, ::class.java)
-        val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0)
-        notification.setLatestEventInfo(this, "This is title", "This is content", pendingIntent)
-        startForeground(1, notification)
+    //此处思考把mediaProject放到一个Capture类里
+    /*constructor(mediaProjection: MediaProjection?) {
+        this.mMediaProjection = mediaProjection
+    }*/
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        startRecording()
+//        createNotificationChannel()
+        mResultCode = intent?.getIntExtra("code", -1) ?: -1
+        mResultData = intent?.getParcelableExtra("data")
+
+//        mMediaProjection = mMediaProjectionManager.getMediaProjection(mResultCode, mResultData)
+
+        return super.onStartCommand(intent, flags, startId)
+    }
+
+    private fun startRecording() {
+        if (isStarted) return
+        isStarted = true
     }
 
     /**
@@ -53,6 +70,15 @@ class ScreenLiveService : Service() {
         override fun getName(): String {
             return "test"
         }
-
     }
+
+    companion object {
+        /*fun launch(context: Context, mediaProjection: MediaProjection?) {
+            startForegroundService(context, Intent(this, ScreenLiveService::class.java).apply {
+                putExtra("code", resultCode)
+                putExtra("data", data)
+            })
+        }*/
+    }
+
 }

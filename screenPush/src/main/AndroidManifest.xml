@@ -14,12 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <service android:name=".service.ScreenLiveService">
+        <service android:name=".service.ScreenLiveService" android:enabled="true">
             <intent-filter>
                 <action android:name="cc.abto.server"></action>
             </intent-filter>
         </service>
     </application>
-
-
 </manifest>

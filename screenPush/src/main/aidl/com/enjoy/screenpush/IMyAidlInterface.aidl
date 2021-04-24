@@ -15,4 +15,8 @@ interface IMyAidlInterface {
      * 提供给第二个app使用的接口
      */
     String getName();
+
+    /**
+     * 提供录屏数据
+     */
 }

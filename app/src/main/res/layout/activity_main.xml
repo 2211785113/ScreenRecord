@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btn_runnable_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="startLive"
-        android:text="开始录屏" />
+        android:text="以子线程方式启动(废弃)"
+        app:layout_constraintTop_toTopOf="parent"></Button>
 
     <Button
+        android:id="@+id/btn_service_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="stopLive"
-        android:text="停止录屏" />
-
-</LinearLayout>
+        android:text="以服务方式启动"
+        app:layout_constraintTop_toBottomOf="@id/btn_runnable_start"></Button>
+</androidx.constraintlayout.widget.ConstraintLayout>
